@@ -1,0 +1,348 @@
+@import "tailwindcss";
+
+:root {
+  --page: #fdfdfc;
+  --ink: #2a2438;
+  --text: #505054;
+  --muted: #505054;
+  --quiet: #9da1aa;
+  --line: #ece9ee;
+  --panel: #faf8fb;
+  --blue: #0032f0;
+  --blue-soft: #f1f2ff;
+  --accent: #5d2f78;
+  --accent-soft: #f7f2f8;
+  --home-accent: #f62477;
+  --home-accent-ink: #c41457;
+  --home-accent-soft: #fff0f6;
+  --hero-name-purple: #d10056;
+  --lime: #f4edf5;
+  --green: #0e7a00;
+  --green-soft: #eef7ea;
+  --pink: #f7f2f8;
+  --shadow: 0 30px 90px rgba(42, 36, 56, 0.08);
+  --sans: "Geist", "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --mono: "Geist Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --hero-display: "Bricolage Grotesque", "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
+  --hero-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --handwritten: "Caveat", cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--hero-sans);
+  letter-spacing: 0;
+  overflow-x: hidden;
+}
+
+/* Custom Typography Helpers */
+.font-display {
+  font-family: var(--hero-display);
+}
+
+.font-editorial {
+  font-family: "Newsreader", "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+.font-sans-ui {
+  font-family: var(--hero-sans);
+}
+
+.font-mono-code {
+  font-family: var(--mono);
+}
+
+.font-handwritten {
+  font-family: var(--handwritten);
+}
+
+/* Main Content Shell */
+.shell-container {
+  width: min(100%, 920px);
+  margin: 0 auto;
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  background: var(--page);
+}
+
+/* Navigation */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 54px;
+  padding: 0 28px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(253, 253, 252, 0.92);
+  backdrop-filter: blur(14px);
+}
+
+/* Interactive Hero System Grid */
+.hero-system-grid {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: repeat(8, minmax(0, 1fr));
+  place-items: stretch;
+  padding: 0;
+  pointer-events: auto;
+  border-top: 1px solid rgba(42, 36, 56, 0.06);
+  border-left: 1px solid rgba(42, 36, 56, 0.06);
+}
+
+.hero-system-mark {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-right: 1px solid rgba(42, 36, 56, 0.06);
+  border-bottom: 1px solid rgba(42, 36, 56, 0.06);
+  background-color: transparent;
+  transform: scale(1);
+  border-radius: 0px;
+  box-shadow: 0 0 0 rgba(244, 114, 182, 0);
+  cursor: crosshair;
+  /* Smooth fade-out transitions when mouse leaves */
+  transition: 
+    background-color 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    border-radius 0.5s ease,
+    border-color 0.8s ease;
+}
+
+.hero-system-mark:hover {
+  background-color: #f472b6;
+  border-color: #ec4899;
+  transform: scale(0.92);
+  border-radius: 6px;
+  box-shadow: 0 0 16px rgba(244, 114, 182, 0.65), 0 2px 8px rgba(246, 36, 119, 0.35);
+  z-index: 5;
+  /* Fast enter for instant reaction */
+  transition: 
+    background-color 0.04s ease,
+    transform 0.06s ease,
+    box-shadow 0.04s ease,
+    border-radius 0.06s ease,
+    border-color 0.04s ease;
+}
+
+/* Polaroid Card & Frame */
+.polaroid-frame {
+  position: relative;
+  z-index: 10;
+  width: min(85%, 390px);
+  margin: 0 auto;
+  padding: 16px 16px 18px;
+  background: #ffffff;
+  border: 1px solid rgba(42, 36, 56, 0.06);
+  box-shadow: 0 24px 44px rgba(35, 24, 43, 0.12);
+  transform: rotate(-1.8deg);
+  transition: transform 380ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 380ms ease;
+}
+
+.polaroid-frame:hover {
+  transform: rotate(0deg) translateY(-4px) scale(1.02);
+  box-shadow: 0 30px 56px rgba(35, 24, 43, 0.18);
+}
+
+/* Shimmer CTA Button */
+.shimmer-button {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 20px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #100e11;
+  color: #ffffff;
+  font-weight: 500;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.shimmer-button::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: -35% auto -35% 0;
+  width: 42%;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: translateX(-220%) skewX(-18deg);
+  animation: ctaShimmer 3.5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+@keyframes ctaShimmer {
+  0%, 62% {
+    transform: translateX(-220%) skewX(-18deg);
+  }
+  84%, 100% {
+    transform: translateX(340%) skewX(-18deg);
+  }
+}
+
+/* Marquee Loop */
+.marquee-strip {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #100e11;
+  color: #fffafc;
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marqueeLoop 24s linear infinite;
+  will-change: transform;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-right: 24px;
+  flex: 0 0 auto;
+  font-family: var(--hero-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+}
+
+@keyframes marqueeLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Tool Badges */
+.tool-icon-circle {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(42, 36, 56, 0.05);
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.tool-icon-circle:hover {
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 10px 22px rgba(42, 36, 56, 0.12);
+  z-index: 20;
+  border-color: var(--home-accent);
+}
+
+/* Custom Cursor */
+.site-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  pointer-events: none;
+  transition: opacity 150ms ease;
+}
+
+/* Retro Paper & Resume Styles */
+.retro-paper-texture {
+  background-color: #faf7f2;
+  background-image: radial-gradient(#d8d2c4 0.5px, transparent 0.5px), radial-gradient(#d8d2c4 0.5px, #faf7f2 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+@media print {
+  @page {
+    margin: 12mm 15mm 12mm 15mm;
+    size: letter portrait;
+  }
+  
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .resume-paper {
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .site-cursor,
+  .site-nav,
+  #main-content,
+  footer,
+  .shell-container {
+    display: none !important;
+  }
+}
+
+/* Vintage Cassette Player Textures & Motion */
+.cassette-shell-texture {
+  background-color: #171719;
+  background-image: 
+    radial-gradient(#25252a 0.8px, transparent 0.8px),
+    radial-gradient(#202024 0.8px, #171719 0.8px);
+  background-size: 5px 5px;
+  background-position: 0 0, 2.5px 2.5px;
+}
+
+.cassette-label-paper {
+  background-color: #f3edd9;
+  background-image: radial-gradient(#dfd6c0 0.5px, transparent 0.5px);
+  background-size: 16px 16px;
+}
+
+@keyframes cassette-reel-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-reel {
+  animation: cassette-reel-spin 3.6s linear infinite;
+}
+
+
