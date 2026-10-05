@@ -1,0 +1,335 @@
+import { Project, Experience, SkillCategory, Certification, Achievement } from '../types';
+
+export const PERSONAL_INFO = {
+  name: "Ayush Kumar Singh",
+  roleTitle: "Software Engineer | Backend Developer | AI/ML Engineer",
+  shortRole: "Software Engineer & AI/ML Builder",
+  email: "ayushsingh2005k@gmail.com",
+  phone: "+91 9321101543",
+  location: "Mumbai, India",
+  education: {
+    institution: "VIT Bhopal University",
+    degree: "B.Tech in Computer Science Engineering (AI & ML)",
+    duration: "September 2023 – October 2027",
+  },
+  club: {
+    name: "Navi Mumbai United FC",
+    role: "Founder",
+    description: "Combining passion for football, technology, and community development.",
+  },
+  bio: "I am a final-year Computer Science student specializing in AI and Machine Learning. I build backend systems, AI-powered applications, and full-stack products using Python, Java, Django, REST APIs, and modern AI frameworks. I am interested in software engineering, artificial intelligence, sports analytics, and football technology. I also founded Navi Mumbai United FC, combining my interest in football, technology, and community development.",
+  social: {
+    linkedin: "https://www.linkedin.com/in/ayush-singh-54a6492a3/",
+    github: "https://github.com/ayush2005k",
+  },
+};
+
+export const FEATURED_PROJECTS: Project[] = [
+  {
+    id: "scout-ai-pro",
+    title: "Scout AI Pro",
+    subtitle: "ML-Powered Football Analytics & Player Scouting",
+    headline: "Transforming raw match data and biometric metrics into predictive scouting intelligence.",
+    category: "AI & Sports Analytics",
+    year: "2026",
+    tags: ["Machine Learning", "XGBoost", "React", "Gemini AI"],
+    tech: ["React", "TypeScript", "Python", "Machine Learning", "Gemini AI", "Tailwind CSS"],
+    description: "An ML-powered football analytics platform focused on player scouting and performance prediction. Combines tactical football intelligence with predictive modeling to assist scouts and coaching staff.",
+    keyContributions: [
+      "Applied XGBoost, Random Forest, and Linear Regression models for predictive player analytics and trajectory forecasting.",
+      "Developed interactive scouting dashboards using React, TypeScript, and Tailwind CSS for visual statistical evaluation.",
+      "Combined football analytics with machine learning-based insights and Gemini AI summarization for prospective recruit profiles.",
+    ],
+    gradientTheme: "from-emerald-500/10 via-teal-500/5 to-transparent",
+    accentColor: "#059669",
+    metrics: [
+      { label: "Algorithms", value: "XGBoost + RF" },
+      { label: "UI Layer", value: "React + TS" },
+      { label: "Intelligence", value: "Gemini AI" },
+    ],
+    isFeatured: true,
+  },
+  {
+    id: "outfitlock-ai",
+    title: "OutfitLock AI",
+    subtitle: "AI-Powered Fashion Image Generation Platform",
+    headline: "End-to-end multi-modal pipeline transforming outfit uploads into high-fidelity fashion renders.",
+    category: "Generative AI & Cloud",
+    year: "2026",
+    tags: ["Vertex AI Imagen", "Gemini Vision", "Django REST", "Google Cloud"],
+    tech: ["React", "TypeScript", "Django", "Django REST Framework", "Gemini Vision", "Vertex AI Imagen", "Google Cloud"],
+    description: "An AI-powered fashion image generation platform that allows users to upload outfit concepts and synthesize production-ready styled renders with fine-grained contextual control.",
+    keyContributions: [
+      "Built an AI fashion image generation workflow integrating Gemini Vision for image analysis and Vertex AI Imagen for generation.",
+      "Developed a full-stack pipeline supporting outfit uploads, image validation, and robust REST APIs with Django REST Framework.",
+      "Implemented dynamic prompt engineering to optimize texture fidelity, posture, and lighting realism.",
+      "Integrated Google Cloud Vertex AI infrastructure to reliably process and serve multiple fashion visual outputs.",
+    ],
+    gradientTheme: "from-pink-500/10 via-purple-500/5 to-transparent",
+    accentColor: "#d10056",
+    metrics: [
+      { label: "Vision LLM", value: "Gemini Vision" },
+      { label: "Synthesis", value: "Vertex AI Imagen" },
+      { label: "Backend", value: "Django REST" },
+    ],
+    isFeatured: true,
+  },
+  {
+    id: "recover-iq",
+    title: "RecoverIQ — AI Revenue Recovery Intelligence",
+    subtitle: "Full-Stack Development · AI/ML · FinTech · SaaS",
+    headline: "AI-powered revenue recovery platform helping merchants reduce payment failures with expected-value decision engines.",
+    category: "FinTech & AI SaaS",
+    year: "2026",
+    tags: ["FastAPI", "React 19", "Scikit-Learn", "Expected-Value Engine", "SQLAlchemy"],
+    tech: ["React 19", "TypeScript", "Python", "FastAPI", "Scikit-learn", "Logistic Regression", "Pandas", "SQLAlchemy", "SQLite", "Tailwind CSS"],
+    description: "RecoverIQ is an AI-powered revenue recovery platform designed to help merchants reduce payment failures and identify potential revenue recovery opportunities. It combines machine learning predictions, expected-value-based action recommendations, policy guardrails, and human-in-the-loop approvals to support smarter payment recovery decisions. The platform features an interactive merchant dashboard, payment risk analysis, recovery recommendations, decision auditing, and safe test-mode simulations. Its evolving SaaS architecture supports merchant workspaces and prepares for merchant-specific payment data imports and future payment gateway integrations.",
+    keyContributions: [
+      "AI-Powered Payment Analysis: Evaluates failed and at-risk payments using machine learning predictions.",
+      "Expected-Value Decision Engine: Estimates the potential value of recovery actions while accounting for action costs.",
+      "Intelligent Recovery Recommendations: Selects from seven predefined recovery actions using scoring and policy guardrails.",
+      "Human-in-the-Loop Approvals: Enables merchants to review, approve, reject, or skip recommended actions.",
+      "Interactive Analytics Dashboard: Visualizes payment failures, recovery opportunities, decision metrics, and baseline comparisons.",
+      "Audit & Explainability: Tracks decisions, input features, policy checks, and model explanations.",
+      "Safe Simulation Mode: Tests recovery strategies without moving real funds.",
+      "Merchant Workspace & Onboarding: Supports dynamic merchant profiles, business configuration, currency selection, and guided setup.",
+      "CSV & Gateway Integration Roadmap: Designed for future merchant data imports and payment gateway connectivity.",
+    ],
+    gradientTheme: "from-blue-500/10 via-emerald-500/5 to-transparent",
+    accentColor: "#0284c7",
+    metrics: [
+      { label: "Decision Engine", value: "Expected-Value" },
+      { label: "Recovery Actions", value: "7 Predefined" },
+      { label: "Backend Core", value: "FastAPI + ML" },
+    ],
+    techStackTable: [
+      { category: "Frontend", technologies: "React 19, TypeScript, Vite" },
+      { category: "Styling", technologies: "Tailwind CSS" },
+      { category: "Backend", technologies: "Python, FastAPI" },
+      { category: "Database", technologies: "SQLAlchemy, SQLite" },
+      { category: "Machine Learning", technologies: "Scikit-learn, Logistic Regression" },
+      { category: "Data Processing", technologies: "Pandas" },
+      { category: "Architecture", technologies: "REST APIs, modular services, merchant workspace context" },
+      { category: "Testing", technologies: "Pytest, frontend lint/build checks" },
+    ],
+    isFeatured: true,
+  },
+];
+
+export const ADDITIONAL_PROJECTS: Project[] = [
+  {
+    id: "cabshare",
+    title: "CabShare",
+    subtitle: "Smart Cab Pooling & Ride Management Platform",
+    headline: "Full-stack ridesharing engine connecting commuters with automated booking and secure auth.",
+    category: "Full-Stack Web & Backend",
+    year: "2025",
+    tags: ["Django REST", "JWT Auth", "MySQL", "Tailwind CSS"],
+    tech: ["Django", "Django REST Framework", "MySQL", "JavaScript", "Tailwind CSS", "JWT"],
+    description: "A full-stack cab pooling platform designed for campus and metropolitan commuters to organize shared rides, minimize travel costs, and streamline route coordination.",
+    keyContributions: [
+      "Built resilient backend APIs and stateful ride models using Django REST Framework.",
+      "Implemented secure JWT (JSON Web Token) authentication and session validation across user roles.",
+      "Developed end-to-end booking workflows and real-time ride management APIs.",
+    ],
+    gradientTheme: "from-blue-500/10 to-transparent",
+    isFeatured: false,
+  },
+  {
+    id: "ai-resume-screening",
+    title: "AI Resume Screening System",
+    subtitle: "NLP-Driven Talent Matching Pipeline",
+    headline: "Semantic matching of candidate profiles to job specifications using modern NLP.",
+    category: "NLP & AI",
+    year: "2025",
+    tags: ["Python", "NLP", "Scikit-Learn"],
+    tech: ["Python", "NLP", "Scikit-learn", "Flask"],
+    description: "An intelligent parsing and scoring system that evaluates candidate resumes against job requisitions using semantic similarity and skill entity extraction.",
+    keyContributions: [
+      "Extracted technical skill taxonomies from unstructured PDF/DOCX resumes.",
+      "Generated weighted candidate suitability rankings with explainable keyword matches.",
+    ],
+    gradientTheme: "from-violet-500/10 to-transparent",
+    isFeatured: false,
+  },
+  {
+    id: "bengaluru-fc-recruitment",
+    title: "Bengaluru FC Recruitment Intelligence",
+    subtitle: "Football Scouting & Recruitment Analytics",
+    headline: "Data-driven scouting platform analysing Bengaluru FC's historical transfers, player pathways, and squad gaps.",
+    category: "Football Analytics",
+    year: "2026",
+    tags: ["Python", "Pandas", "Matplotlib", "ReportLab"],
+    tech: ["Python", "Pandas", "Matplotlib", "ReportLab"],
+    description: "A data-driven scouting platform analysing Bengaluru FC's historical transfers, player pathways, market valuations, and squad gaps to generate recruitment profiles and actionable player recommendations.",
+    keyContributions: [
+      "Analyzed Bengaluru FC's historical transfer flows, age distributions, and squad minutes.",
+      "Identified critical positional gaps and player pathway bottlenecks across domestic & international markets.",
+      "Engineered automated scouting profile generation and valuation comparisons using Pandas & Matplotlib.",
+      "Compiled actionable recruitment reports and executive dossiers using ReportLab.",
+    ],
+    gradientTheme: "from-blue-600/10 to-transparent",
+    isFeatured: false,
+  },
+  {
+    id: "image-to-video-multi-agent",
+    title: "Image-to-Video Multi-Agent Pipeline",
+    subtitle: "AI-Powered Video Generation System",
+    headline: "Autonomous multi-agent orchestration converting static images into dynamic videos using LangGraph, Gemini Vision, and Remotion.",
+    category: "Multi-Agent AI & Video",
+    year: "2026",
+    tags: ["LangGraph", "Gemini", "Remotion", "React", "TypeScript", "Python"],
+    tech: ["Python", "LangGraph", "Gemini", "Remotion", "React", "TypeScript"],
+    description: "An AI-powered multi-agent pipeline that transforms images into engaging videos using LangGraph, Gemini Vision, and Remotion. Features intelligent image selection, automated storyboarding, dynamic code generation, error correction, and end-to-end video rendering.",
+    keyContributions: [
+      "Orchestrated multi-agent state machines in LangGraph for automated storyboarding, scene planning, and asset validation.",
+      "Leveraged Gemini Vision to evaluate image semantics, spatial composition, and pacing triggers.",
+      "Engineered automated Remotion TypeScript code synthesis to programmatically assemble video components and transitions.",
+      "Implemented iterative self-healing loops for syntax and rendering error correction before final video generation.",
+    ],
+    gradientTheme: "from-fuchsia-500/10 to-transparent",
+    isFeatured: false,
+  },
+];
+
+export const EXPERIENCES: Experience[] = [
+  {
+    id: "indian-railways",
+    role: "Software & IT Intern",
+    company: "Indian Railways",
+    companySubtitle: "Ministry of Railways, Government of India",
+    employmentType: "Internship",
+    location: "Mumbai, India",
+    duration: "March 2026 – June 2026",
+    techAreas: ["Software Systems", "IT Operations", "System Monitoring", "Documentation"],
+    responsibilities: [
+      "Gained exposure to enterprise software systems, IT workflows, and operational processes.",
+      "Assisted with system monitoring, technical documentation, and basic troubleshooting activities.",
+      "Developed an understanding of software maintenance and IT support operations.",
+      "Gained exposure to technology and IT operations within a large-scale organization.",
+    ],
+    logoUrl: "/indian_railways.png",
+    logoAlt: "Indian Railways Logo",
+  },
+  {
+    id: "screener-buddy",
+    role: "Backend Developer & Product Intern",
+    company: "Screener Buddy (FinTech)",
+    employmentType: "Internship",
+    location: "Mumbai, India — Remote",
+    duration: "January 2026 – March 2026",
+    techAreas: ["Python", "Django", "Django REST Framework", "REST APIs", "Product Development"],
+    responsibilities: [
+      "Contributed to backend and product development for a fintech and stock-market platform using Python and Django.",
+      "Assisted in developing backend APIs and application functionality using Django REST Framework.",
+      "Collaborated with founders to understand product requirements, prioritize features, and support product planning.",
+      "Participated in feature ideation, testing, and translating business requirements into technical solutions.",
+    ],
+    logoUrl: "/screener_buddy.svg",
+    logoAlt: "Screener Buddy Logo",
+  },
+  {
+    id: "digital-soch",
+    role: "Backend Developer Intern",
+    company: "Digital Soch Pvt. Ltd.",
+    employmentType: "Internship",
+    location: "Mumbai, India",
+    duration: "November 2025 – December 2025",
+    techAreas: ["PHP", "Laravel", "MySQL"],
+    responsibilities: [
+      "Built backend modules using Laravel following MVC architecture.",
+      "Developed CRUD systems and worked with SQL queries.",
+      "Integrated REST APIs.",
+      "Automated administrative workflows and worked on backend performance improvements.",
+    ],
+    logoUrl: "/digital_soch.svg",
+    logoAlt: "Digital Soch Logo",
+  },
+  {
+    id: "mumbai-city-fc",
+    role: "Sports Operations Volunteer",
+    company: "Mumbai City FC",
+    employmentType: "Part-time · Hybrid",
+    location: "Mumbai, Maharashtra, India",
+    duration: "January 2026 – May 2026",
+    responsibilities: [
+      "Supported matchday operations and event coordination at Mumbai City FC, ensuring smooth execution of events.",
+      "Assisted with on-ground activities to improve operational efficiency and coordination during matches.",
+      "Collaborated with event teams to improve the overall matchday experience for fans and participants.",
+      "Gained exposure to sports management and developed teamwork and communication skills.",
+    ],
+    logoUrl: "/mumbai_city_fc.png",
+    logoAlt: "Mumbai City FC Crest Logo",
+  },
+];
+
+export const SKILL_CATEGORIES: SkillCategory[] = [
+  {
+    category: "Programming Languages",
+    skills: ["Python", "Java", "SQL", "TypeScript", "PHP"],
+  },
+  {
+    category: "Backend Development",
+    skills: ["Django", "Django REST Framework", "FastAPI", "Laravel", "REST APIs"],
+  },
+  {
+    category: "AI / Machine Learning",
+    skills: ["Machine Learning", "Natural Language Processing", "LLMs", "Generative AI", "Prompt Engineering", "Predictive Analytics"],
+  },
+  {
+    category: "AI Frameworks & APIs",
+    skills: ["LangChain", "OpenAI API", "Gemini API", "Vertex AI"],
+  },
+  {
+    category: "Libraries & Analysis",
+    skills: ["Scikit-learn", "PyTorch", "Pandas", "NumPy", "Matplotlib", "BeautifulSoup"],
+  },
+  {
+    category: "Frontend Development",
+    skills: ["React", "Tailwind CSS"],
+  },
+  {
+    category: "Databases",
+    skills: ["MySQL", "PostgreSQL"],
+  },
+  {
+    category: "Tools & Platforms",
+    skills: ["Git", "GitHub", "Postman", "Google Cloud", "AWS", "Excel", "Power BI"],
+  },
+];
+
+export const ACHIEVEMENTS: Achievement[] = [
+  {
+    title: "OpenCode’25 Hackathon",
+    detail: "Ranked 54th among 200+ individual participants in competitive open-source software sprint.",
+    event: "IIIT Allahabad",
+    rank: "Rank 54 / 200+",
+  },
+];
+
+export const CERTIFICATIONS: Certification[] = [
+  {
+    title: "Google IT Support Professional Certificate",
+    issuer: "Google",
+  },
+  {
+    title: "Applied Machine Learning in Python",
+    issuer: "University of Michigan",
+  },
+  {
+    title: "The Complete Python Bootcamp",
+    issuer: "Udemy",
+  },
+];
+
+export const CORE_TECH_ICONS = [
+  { name: "Python", symbol: "Py", icon: "/tech/python.svg", color: "#3776ab", bg: "#f0f7fc", border: "#cce4f7" },
+  { name: "Django", symbol: "Dj", icon: "/tech/django.svg", color: "#092e20", bg: "#eef8f3", border: "#bfe5d3" },
+  { name: "React", symbol: "Re", icon: "/tech/react.svg", color: "#087ea4", bg: "#f0faff", border: "#b8e7fa" },
+  { name: "TypeScript", symbol: "TS", icon: "/tech/typescript.svg", color: "#3178c6", bg: "#f0f6fc", border: "#bcd9f8" },
+  { name: "Git", symbol: "Git", icon: "/tech/git.svg", color: "#f05032", bg: "#fef3f0", border: "#fcc8be" },
+  { name: "PyTorch", symbol: "🔥", icon: "/tech/pytorch.svg", color: "#ee4c2c", bg: "#fff2ee", border: "#fbc7ba" },
+  { name: "FastAPI", symbol: "⚡", icon: "/tech/fastapi.svg", color: "#05998b", bg: "#eafaf6", border: "#b7eddf" },
+  { name: "Gemini AI", symbol: "✦", icon: "/tech/gemini.svg", color: "#4285f4", bg: "#f3f6ff", border: "#cce0ff" },
+  { name: "MySQL", symbol: "My", icon: "/tech/mysql.svg", color: "#00758f", bg: "#eef8fa", border: "#bee4ed" },
+];
