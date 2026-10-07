@@ -1,13 +1,6 @@
 # Ayush Kumar Singh | Portfolio
 
-<p align="center">
-  <a href="https://ayushsingh-me.netlify.app/">
-    <img src="https://img.shields.io/badge/Portfolio-Live-brightgreen?style=for-the-badge" alt="Live Portfolio"/>
-  </a>
-  <a href="https://github.com/ayush2005k">
-    <img src="https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github" alt="GitHub"/>
-  </a>
-</p>
+
 
 ## 👋 About Me
 
